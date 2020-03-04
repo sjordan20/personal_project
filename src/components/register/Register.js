@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { register } from "../../ducks/authReducer";
+import { Link } from 'react-router-dom'
 
 
 function Register(props) {
@@ -16,8 +17,8 @@ function Register(props) {
     }
 
     const submitUser = (event) => {
-        (props.register(username, password));
-        props.history.push('/dashboard')
+        event.preventDefault()
+        props.register(username, password);
     };
 
     console.log(props);
@@ -38,6 +39,7 @@ function Register(props) {
                 />
                 <button>Register</button>
             </form>
+            <Link to='/login'><button> Login</button></Link>
         </div>
     );
 }

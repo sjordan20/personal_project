@@ -21,7 +21,7 @@ CREATE TABLE groups (
     group_pic VARCHAR(300)
 );
 
-CREATE TABLE user-group (
+CREATE TABLE user_group (
     user_id INT REFERENCES users(user_id),
     group_id INT REFERENCES group(group_id)
 )

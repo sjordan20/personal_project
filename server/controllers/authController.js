@@ -40,7 +40,7 @@ module.exports = {
             req.session.user = user;
             return res.status(200).send(req.session.user);
         } else {
-            return status(400).send("Incorrect password or username");
+            return res.status(400).send("Incorrect password or username");
         }
     },
 

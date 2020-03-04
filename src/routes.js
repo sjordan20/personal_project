@@ -7,10 +7,13 @@ import SearchDashboard from './components/searchDashboard/SearchDashboard'
 import searchedPost from './components/searchedPost/SearchedPost'
 import CreatePost from './components/createPost/CreatePost'
 import groupProfile from './components/groupProfile/GroupProfile'
+import Header from './components/header/Header'
+import Landing from './components/landing/Landing'
 
 export default (
     <Switch>
-        <Route exact path='/' component={Login} />
+        <Route exact path='/' component={Landing} />
+        <Route path="/login" component={Login} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/register" component={Register} />
         <Route path="/searchDashboard" component={SearchDashboard} />
