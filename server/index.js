@@ -3,6 +3,9 @@ const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
 
+const checkUser = require('./middleware/checkUser')
+const authCtrl = require('./controllers/authController')
+
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
 
@@ -27,3 +30,11 @@ massive({
     console.log('||-----DATABASE IS HERE TO PARTY---||')
     app.listen(SERVER_PORT, () => console.log(`||--SERVER RUNNING ON ${SERVER_PORT}--||`))
 })
+
+
+// Auth Endpoints
+
+app.post('/api/register', checkUser, authCtrl.register)
+app.post('/api/login', authCtrl.login)
+app.post(`/api/logout`, authCtrl.logout)
+app.get('/api/check', checkUser)
