@@ -1,25 +1,22 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Dashboard from './components/dashboard/Dashboard'
-import Register from './components/register/Register'
-import Login from './components/login/Login'
 import SearchDashboard from './components/searchDashboard/SearchDashboard'
-import searchedPost from './components/searchedPost/SearchedPost'
+import SearchedPost from './components/searchedPost/SearchedPost'
 import CreatePost from './components/createPost/CreatePost'
-import groupProfile from './components/groupProfile/GroupProfile'
-import Header from './components/header/Header'
+import GroupProfile from './components/groupProfile/GroupProfile'
 import Landing from './components/landing/Landing'
+import GroupPage from './components/groupPage/GroupPage'
 
 export default (
     <Switch>
         <Route exact path='/' component={Landing} />
-        <Route path="/login" component={Login} />
         <Route path="/dashboard" component={Dashboard} />
-        <Route path="/register" component={Register} />
+        <Route path='groupPage' component={GroupPage} />
         <Route path="/searchDashboard" component={SearchDashboard} />
-        <Route path="/searchedPost" component={searchedPost} />
+        <Route path="/searchedPost" component={SearchedPost} />
         <Route path="/createPost" component={CreatePost} />
-        <Route path="/groupProfile" component={groupProfile} />
+        <Route path="/groupProfile" component={GroupProfile} />
     </Switch>
 
 )

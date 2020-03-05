@@ -1,8 +1,10 @@
-$primary: #5863f8;
-$secondary: #5fbff9;
-$info: #16bac5;
+$primary: #303688;
+$secondary: #4e9dcc;
+$info: #118890;
 $dark: #171d1c;
 $light: #efe9f4;
+$font-title: "Girassol", cursive;
+$info-font: "Pathway Gothic One", sans-serif;
 
 @mixin flex-row($j: space-between, $a: center) {
 	display: flex;

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { logout, register, login } from "../../ducks/authReducer";
-
-import Login from "../login/Login";
-import Register from "../register/Register";
+import './header.css'
 
 function Header(props) {
 
@@ -50,58 +48,87 @@ function Header(props) {
             {!props.authReducer.user.username ? (
                 registered ? (
 
-                    <div>
-                        <form
-                            onSubmit={loginUser}>
-                            <input
-                                placeholder="Enter Username"
-                                value={username}
-                                name="username"
-                                onChange={handleUsername}
-                            />
-                            <input
-                                placeholder="Enter Your Password"
-                                value={password}
-                                name="password"
-                                type="password"
-                                onChange={handlePassword}
-                            />
-                            <button>Login</button>
-                        </form>
-                        <button onClick={setFalse}>Go to Register</button>
-                    </div>
+                    <div className='header-base'>
 
-                ) : (
-                        <div>
+
+                        <h1 className="title">My App Name
+                            </h1>
+                        <div className="input-box">
                             <form
-                                onSubmit={submitUser}>
+                                onSubmit={loginUser}>
                                 <input
-                                    placeholder="Enter New Username"
+                                    className='username-input'
+                                    placeholder="Enter Username"
                                     value={username}
                                     name="username"
                                     onChange={handleUsername}
                                 />
                                 <input
-                                    placeholder="Create Your Password"
+                                    className='password-input'
+                                    placeholder="Enter Your Password"
                                     value={password}
                                     name="password"
                                     type="password"
                                     onChange={handlePassword}
                                 />
-                                <button>Register</button>
+
+                                <button
+                                    className='login-register-button'
+                                >Login</button>
                             </form>
-                            <button onClick={setTrue}> Go to Login</button>
+                        </div>
+                        <button
+                            className='go-to'
+                            onClick={setFalse}>Go to Register</button>
+                    </div>
+
+                ) : (
+                        <div className='header-base'>
+                            <h1 className="title">My App Name
+
+                            </h1>
+                            <div className='input-box'>
+
+                                <form
+                                    onSubmit={submitUser}>
+                                    <input
+                                        className='username-input'
+                                        placeholder="Enter New Username"
+                                        value={username}
+                                        name="username"
+                                        onChange={handleUsername}
+                                    />
+                                    <input
+                                        className='password-input'
+                                        placeholder="Create Your Password"
+                                        value={password}
+                                        name="password"
+                                        type="password"
+                                        onChange={handlePassword}
+                                    />
+                                    <button
+                                        className="login-register-button"
+                                    >Register</button>
+                                </form>
+                            </div>
+                            <button
+                                className='go-to'
+                                onClick={setTrue}> Go to Login</button>
                         </div>
                     )
-            ) : (<>
-                <h2 className='username'>{props.authReducer.user.username}</h2>
-                <button
-                    onClick={logout}
-                >Logout</button>
-            </>
-                )}
+            ) : (
+                    <div className='logged-header'>
+                        <h1 className="title">My App Name
+                            </h1>
+                        <button
+                            className='logout'
+                            onClick={logout}
+                        >Logout</button>
+                    </div>
+                )
+            }
 
-        </div>
+        </div >
     );
 }
 

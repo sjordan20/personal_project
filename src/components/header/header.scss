@@ -1,0 +1,79 @@
+@import "../../sass/vars";
+
+.header-base {
+	width: 100%;
+	height: 230px;
+	background-color: $primary;
+	@include flex-row;
+	position: relative;
+}
+
+.title {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+	font-family: $font-title;
+	text-decoration: underline;
+	font-weight: 600;
+	font-size: 1.8rem;
+	color: $info;
+}
+
+.input-box {
+	height: 30%;
+	width: 80%;
+	padding: 5%;
+}
+
+.username-input {
+	margin-bottom: 10%;
+	margin-right: 8%;
+}
+
+.password-input {
+	margin-right: 10%;
+}
+
+.login-register-button {
+	width: 70px;
+	height: 20px;
+	background-color: $secondary;
+	border-radius: 30%;
+}
+
+.go-to {
+	position: absolute;
+	top: 7px;
+	right: 13px;
+	font-weight: 400;
+	font-family: $info-font;
+	font-size: 1.3rem;
+	color: $secondary;
+}
+
+.logged-header {
+	width: 100%;
+	height: 100px;
+	background-color: $primary;
+	position: relative;
+}
+
+.logged-title {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-family: $font-title;
+	text-decoration: underline;
+	font-weight: 600;
+	font-size: 1.6rem;
+	color: $info;
+}
+
+.logout {
+	position: absolute;
+	top: 7px;
+	right: 5px;
+	font-family: $info-font;
+	color: $secondary;
+	font-size: 1.2rem;
+}
