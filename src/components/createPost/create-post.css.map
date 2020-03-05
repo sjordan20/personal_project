@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,sBAAsB,CAAC;EACtB,KAAK,ECFM,OAAO;EDGlB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,ECNP,OAAO;CDOhB",
+    "sources": [
+        "create-post.scss",
+        "../../sass/_vars.scss"
+    ],
+    "names": [],
+    "file": "create-post.css"
+}

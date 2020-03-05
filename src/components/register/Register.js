@@ -19,6 +19,8 @@ function Register(props) {
     const submitUser = (event) => {
         event.preventDefault()
         props.register(username, password);
+        setUsername('')
+        setPassword('')
     };
 
     console.log(props);
@@ -28,11 +30,13 @@ function Register(props) {
                 onSubmit={submitUser}>
                 <input
                     placeholder="Enter New Username"
+                    value={username}
                     name="username"
                     onChange={handleUsername}
                 />
                 <input
                     placeholder="Create Your Password"
+                    value={password}
                     name="password"
                     type="password"
                     onChange={handlePassword}

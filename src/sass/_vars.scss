@@ -1,0 +1,11 @@
+$primary: #5863f8;
+$secondary: #5fbff9;
+$info: #16bac5;
+$dark: #171d1c;
+$light: #efe9f4;
+
+@mixin flex-row($j: space-between, $a: center) {
+	display: flex;
+	justify-content: $j;
+	align-items: $a;
+}

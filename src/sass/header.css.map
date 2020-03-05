@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,SAAS,CAAC;EACT,KAAK,ECFM,OAAO;CDGlB",
+    "sources": [
+        "header.scss",
+        "_vars.scss"
+    ],
+    "names": [],
+    "file": "header.css"
+}

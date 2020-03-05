@@ -18,6 +18,8 @@ function Login(props) {
     const loginUser = event => {
         event.preventDefault()
         props.login(username, password)
+        setUsername('')
+        setPassword('')
     }
     return (
         <div>
@@ -25,11 +27,13 @@ function Login(props) {
                 onSubmit={loginUser}>
                 <input
                     placeholder="Enter Username"
+                    value={username}
                     name="username"
                     onChange={handleUsername}
                 />
                 <input
                     placeholder="Enter Your Password"
+                    value={password}
                     name="password"
                     type="password"
                     onChange={handlePassword}

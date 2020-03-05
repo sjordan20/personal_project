@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import routes from "./routes";
 import Header from './components/header/Header'
 
-import "./App.css";
+import "./app.css";
 
 function App(props) {
   return (
