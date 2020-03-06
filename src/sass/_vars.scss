@@ -6,8 +6,20 @@ $light: #efe9f4;
 $font-title: "Girassol", cursive;
 $info-font: "Pathway Gothic One", sans-serif;
 
-@mixin flex-row($j: space-between, $a: center) {
+@mixin flex-row($jr: space-around, $ar: center) {
 	display: flex;
-	justify-content: $j;
-	align-items: $a;
+	justify-content: $jr;
+	align-items: $ar;
+}
+
+@mixin flex-column($jc: space-around, $ac: center, $qc: column) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ac;
+	flex-direction: $qc;
+}
+
+@mixin button-icon($c: $dark, $s: 30px) {
+	color: $c;
+	font-size: $s;
 }

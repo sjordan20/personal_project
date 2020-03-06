@@ -1,0 +1,84 @@
+.body {
+  background-color: #efe9f4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+.border-line {
+  width: 100%;
+  height: 3px;
+  background-color: #171d1c;
+}
+
+.create-group-container {
+  width: 100%;
+  height: 120px;
+  background-color: #4e9dcc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.group-name-input {
+  margin-right: 5%;
+  margin-bottom: 8%;
+}
+
+.fa-plus-square {
+  color: #171d1c;
+  font-size: 30px;
+  margin-left: 5%;
+}
+
+.groups-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #efe9f4;
+  padding: 5%;
+}
+
+.group-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 133px;
+  height: 133px;
+  background-color: #efe9f4;
+  border-radius: 20%;
+  -webkit-box-shadow: 2px 2px 2px #171d1c;
+          box-shadow: 2px 2px 2px #171d1c;
+  margin-top: 5%;
+}
+
+.group-name {
+  width: 80%;
+  height: 20%;
+  background-color: #efe9f4;
+}
+/*# sourceMappingURL=addGroup.css.map */

@@ -1,0 +1,50 @@
+@import "../../sass/vars";
+
+.body {
+	background-color: $light;
+	box-sizing: border-box;
+	height: 100%;
+	width: 100%;
+}
+.border-line {
+	width: 100%;
+	height: 3px;
+	background-color: $dark;
+}
+.create-group-container {
+	width: 100%;
+	height: 120px;
+	background-color: $secondary;
+	@include flex-row;
+}
+
+.group-name-input {
+	margin-right: 5%;
+	margin-bottom: 8%;
+}
+
+.fa-plus-square {
+	@include button-icon;
+	margin-left: 5%;
+}
+
+.groups-body {
+	@include flex-column;
+	background-color: $light;
+	padding: 5%;
+}
+.group-container {
+	@include flex-column;
+	width: 133px;
+	height: 133px;
+	background-color: $light;
+	border-radius: 20%;
+	box-shadow: 2px 2px 2px $dark;
+	margin-top: 5%;
+}
+
+.group-name {
+	width: 80%;
+	height: 20%;
+	background-color: $light;
+}

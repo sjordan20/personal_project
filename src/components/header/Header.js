@@ -42,7 +42,7 @@ function Header(props) {
     const logout = () => {
         props.logout();
     };
-    console.log(props.authReducer.user.username)
+
     return (
         <div>
             {!props.authReducer.user.username ? (

@@ -1,0 +1,26 @@
+@import "../../sass/vars";
+
+.nav-container {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: $secondary;
+	@include flex-row;
+}
+
+.fa-plus {
+	@include button-icon;
+}
+
+.fa-users {
+	@include button-icon;
+}
+
+.fa-search {
+	@include button-icon;
+}
+
+.fa-home {
+	@include button-icon;
+}
