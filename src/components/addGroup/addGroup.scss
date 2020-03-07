@@ -13,14 +13,44 @@
 }
 .create-group-container {
 	width: 100%;
-	height: 120px;
+	height: 300px;
 	background-color: $secondary;
 	@include flex-row;
+	position: relative;
 }
 
+.title-container {
+	position: absolute;
+	top: 10px;
+	display: flex;
+	align-items: center;
+	font-size: 1.5rem;
+	font-family: $info-font;
+}
+
+.drop {
+	width: 80%;
+	height: 50%;
+	font-family: $info-font;
+	color: $light;
+	font-size: 1rem;
+}
 .group-name-input {
 	margin-right: 5%;
 	margin-bottom: 8%;
+}
+
+.create-group-button {
+	width: 100x;
+	height: 20px;
+	background-color: $dark;
+	color: $light;
+	border-radius: 15%;
+}
+
+.group-button {
+	width: 100%;
+	color: $light;
 }
 
 .fa-plus-square {
@@ -30,8 +60,10 @@
 
 .groups-body {
 	@include flex-column;
+	width: 100%;
+	height: 100%;
 	background-color: $light;
-	padding: 5%;
+	padding: 2%;
 }
 .group-container {
 	@include flex-column;
@@ -41,10 +73,26 @@
 	border-radius: 20%;
 	box-shadow: 2px 2px 2px $dark;
 	margin-top: 5%;
+	display: flex;
+}
+
+.group-name-container {
+	width: 30%;
+	height: 25%;
+	display: flex;
+	justify-items: center;
 }
 
 .group-name {
-	width: 80%;
-	height: 20%;
-	background-color: $light;
+	width: 100%;
+	height: 100%;
+	color: $info;
+	font-family: $info-font;
+	font-size: 1.2rem;
+}
+
+img {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
 }

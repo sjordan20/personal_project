@@ -1,7 +1,7 @@
 .header-base {
   width: 100%;
   height: 230px;
-  background-color: #303688;
+  background-color: #63c0cd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,7 +21,7 @@
   text-decoration: underline;
   font-weight: 600;
   font-size: 1.8rem;
-  color: #118890;
+  color: #574b60;
 }
 
 .input-box {
@@ -42,7 +42,7 @@
 .login-register-button {
   width: 70px;
   height: 20px;
-  background-color: #4e9dcc;
+  background-color: #78c091;
   border-radius: 30%;
 }
 
@@ -53,13 +53,13 @@
   font-weight: 400;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 1.3rem;
-  color: #4e9dcc;
+  color: #171d1c;
 }
 
 .logged-header {
   width: 100%;
   height: 100px;
-  background-color: #303688;
+  background-color: #63c0cd;
   position: relative;
 }
 
@@ -71,7 +71,7 @@
   text-decoration: underline;
   font-weight: 600;
   font-size: 1.6rem;
-  color: #118890;
+  color: #574b60;
 }
 
 .logout {
@@ -79,7 +79,7 @@
   top: 7px;
   right: 5px;
   font-family: "Pathway Gothic One", sans-serif;
-  color: #4e9dcc;
+  color: #171d1c;
   font-size: 1.2rem;
 }
 /*# sourceMappingURL=header.css.map */
