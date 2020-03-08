@@ -3,7 +3,7 @@ import React from 'react';
 function SearchDashboard(props) {
     return (
         <div>
-            SearchDashboard
+            <input type="date" />
         </div>
     );
 }

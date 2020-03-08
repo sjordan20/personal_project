@@ -1,0 +1,28 @@
+@import "../../sass/vars";
+
+.main-body {
+	background: rgb(87, 75, 96);
+	background: linear-gradient(90deg, $secondary 8%, $primary 100%);
+	width: 100%;
+	height: 100vh;
+	@include flex-row;
+	position: relative;
+}
+
+.text-box {
+	width: 60%;
+	height: 20%;
+	background-color: $light;
+	position: absolute;
+	top: 10%;
+	border-radius: 5%;
+	@include flex-row;
+	box-shadow: 3px 3px 5px 0px $dark;
+}
+
+.text {
+	width: 80%;
+	font-family: $font-title;
+	font-weight: 500;
+	font-size: 1.1rem;
+}

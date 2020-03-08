@@ -1,0 +1,6 @@
+.body {
+  background: #574b60;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #574b60), color-stop(88%, #498196), to(#c0c5c1));
+  background: linear-gradient(90deg, #574b60 8%, #498196 88%, #c0c5c1 100%);
+}
+/*# sourceMappingURL=dashboard.css.map */

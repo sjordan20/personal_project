@@ -15,7 +15,7 @@
 .create-group-container {
   width: 100%;
   height: 300px;
-  background-color: #78c091;
+  background-color: #498196;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,6 +91,13 @@
   padding: 2%;
 }
 
+.join-title {
+  font-family: "Pathway Gothic One", sans-serif;
+  color: #171d1c;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
 .group-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,7 +133,7 @@
 .group-name {
   width: 100%;
   height: 100%;
-  color: #574b60;
+  color: #171d1c;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 1.2rem;
 }

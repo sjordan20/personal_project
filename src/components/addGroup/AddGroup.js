@@ -101,6 +101,7 @@ class AddGroup extends Component {
                     </div>
 
                     <div className="groups-body">
+                        <div className='join-title'>Join a Group</div>
                         <div className='group-container'>
                             <div className='group-photo' >
                                 <img src={url} />

@@ -6,8 +6,8 @@ function Dashboard(props) {
 
     if (!props.authReducer.user.username) return <Redirect to='/' />
     return (
-        <div>
-            Dashboard
+        <div className='body'>
+
         </div>
     );
 }

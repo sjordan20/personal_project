@@ -1,0 +1,11 @@
+@import "../../sass/vars";
+
+.body {
+	background: rgb(87, 75, 96);
+	background: linear-gradient(
+		90deg,
+		rgba(87, 75, 96, 1) 8%,
+		rgba(73, 129, 150, 1) 88%,
+		rgba(192, 197, 193, 1) 100%
+	);
+}

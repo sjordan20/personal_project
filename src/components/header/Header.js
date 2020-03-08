@@ -51,7 +51,7 @@ function Header(props) {
                     <div className='header-base'>
 
 
-                        <h1 className="title">My App Name
+                        <h1 className="title">FamGram
                             </h1>
                         <div className="input-box">
                             <form
@@ -84,7 +84,7 @@ function Header(props) {
 
                 ) : (
                         <div className='header-base'>
-                            <h1 className="title">My App Name
+                            <h1 className="title">FamGram
 
                             </h1>
                             <div className='input-box'>
@@ -118,7 +118,7 @@ function Header(props) {
                     )
             ) : (
                     <div className='logged-header'>
-                        <h1 className="title">My App Name
+                        <h1 className="title">FamGram
                             </h1>
                         <button
                             className='logout'

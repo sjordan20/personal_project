@@ -1,8 +1,52 @@
 @import "../../sass/vars";
 
-.post-create-container {
-	color: $secondary;
+.post-create-body {
 	width: 100%;
-	height: 40vh;
-	background-color: $primary;
+	height: 100vh;
+	background-color: $light;
+	@include flex-column;
+	position: relative;
+}
+
+.create-container {
+	width: 90%;
+	height: 60%;
+	background-color: $light;
+	border-radius: 5%;
+	box-shadow: 1px 1px 1px $dark;
+	position: absolute;
+	top: 5%;
+	@include flex-column;
+}
+
+.title-text {
+	font-family: $info-font;
+	font-weight: 500;
+	font-size: 1.4rem;
+	color: $dark;
+}
+
+.text {
+	position: absolute;
+	top: 5%;
+}
+.drop-text {
+	color: $dark;
+}
+.dropzone {
+	position: absolute;
+	bottom: 7%;
+	left: 10%;
+	display: flex;
+	justify-content: center;
+}
+
+.submit {
+	position: absolute;
+	right: 5%;
+	bottom: 7%;
+	color: $secondary;
+	font-weight: 600;
+	font-family: $info-font;
+	font-size: 1.6rem;
 }

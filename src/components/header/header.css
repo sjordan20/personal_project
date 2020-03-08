@@ -1,7 +1,6 @@
 .header-base {
   width: 100%;
   height: 230px;
-  background-color: #63c0cd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,6 +10,9 @@
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  background: #574b60;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #574b60), to(#498196));
+  background: linear-gradient(90deg, #574b60 8%, #498196 100%);
 }
 
 .title {
@@ -21,7 +23,7 @@
   text-decoration: underline;
   font-weight: 600;
   font-size: 1.8rem;
-  color: #574b60;
+  color: #c0c5c1;
 }
 
 .input-box {
@@ -42,7 +44,7 @@
 .login-register-button {
   width: 70px;
   height: 20px;
-  background-color: #78c091;
+  background-color: #574b60;
   border-radius: 30%;
 }
 
@@ -59,8 +61,10 @@
 .logged-header {
   width: 100%;
   height: 100px;
-  background-color: #63c0cd;
   position: relative;
+  background: #574b60;
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #574b60), to(#498196));
+  background: linear-gradient(90deg, #574b60 8%, #498196 100%);
 }
 
 .logged-title {
@@ -71,7 +75,7 @@
   text-decoration: underline;
   font-weight: 600;
   font-size: 1.6rem;
-  color: #574b60;
+  color: #c0c5c1;
 }
 
 .logout {

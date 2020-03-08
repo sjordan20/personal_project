@@ -1,7 +1,80 @@
-.post-create-container {
-  color: #78c091;
+.post-create-body {
   width: 100%;
-  height: 40vh;
-  background-color: #63c0cd;
+  height: 100vh;
+  background-color: #efe9f4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.create-container {
+  width: 90%;
+  height: 60%;
+  background-color: #efe9f4;
+  border-radius: 5%;
+  -webkit-box-shadow: 1px 1px 1px #171d1c;
+          box-shadow: 1px 1px 1px #171d1c;
+  position: absolute;
+  top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.title-text {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #171d1c;
+}
+
+.text {
+  position: absolute;
+  top: 5%;
+}
+
+.drop-text {
+  color: #171d1c;
+}
+
+.dropzone {
+  position: absolute;
+  bottom: 7%;
+  left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.submit {
+  position: absolute;
+  right: 5%;
+  bottom: 7%;
+  color: #574b60;
+  font-weight: 600;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.6rem;
 }
 /*# sourceMappingURL=create-post.css.map */
