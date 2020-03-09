@@ -56,6 +56,9 @@ class CreatePost extends Component {
             })
     }
 
+
+
+
     render() {
 
         if (!this.props.authReducer.user.username) return <Redirect to='/' />

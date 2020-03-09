@@ -12,7 +12,9 @@ class AddGroup extends Component {
         super(props)
         this.state = {
             isUploading: false,
-            url: ''
+            url: '',
+            name: '',
+            groups: []
         }
     }
     getSignedRequest = ([file]) => {
@@ -52,11 +54,55 @@ class AddGroup extends Component {
             })
     }
 
+    componentDidMount() {
+        this.getGroups()
+    }
+
+    handleNameChange = (event) => {
+        this.setState({
+            name: event.target.value
+        })
+    }
+
+    getGroups = () => {
+        axios.get('/api/group')
+            .then(res => {
+                this.setState({ groups: res.data })
+                console.log(res.data)
+            })
+            .catch(err => console.log(err))
+    }
+
+
+    createGroup = () => {
+        axios.post(`/api/group/${this.props.authReducer.user.user_id}`,
+            {
+                name: this.state.name,
+                group_pic: this.state.url
+            })
+            .then(() => {
+                this.getGroups()
+            })
+            .catch(err => console.log(err))
+    }
+
 
 
     render() {
         if (!this.props.authReducer.user.username) return <Redirect to='/' />
         const { url, isUploading } = this.state;
+
+
+        const mappedGroups = this.state.groups.map((element, index) => {
+            return (
+                <div>
+                    <img src={element.group_pic} />
+                    {element.name}
+                    {this.key = index}
+                </div>
+            )
+        })
+        console.log(mappedGroups)
 
         return (
             <div >
@@ -90,9 +136,12 @@ class AddGroup extends Component {
                             <input
                                 className="group-name-input"
                                 placeholder='Enter Group Name'
+                                value={this.state.name}
+                                onChange={this.handleNameChange}
                             />
                             <div className='create-group-button'>
                                 <button
+                                    onClick={this.createGroup}
                                     className='group-button'
                                 >Create Group</button>
 
@@ -103,12 +152,13 @@ class AddGroup extends Component {
                     <div className="groups-body">
                         <div className='join-title'>Join a Group</div>
                         <div className='group-container'>
-                            <div className='group-photo' >
-                                <img src={url} />
+                            {mappedGroups}
+                            {/* <div className='group-photo' >
+                                <img src={mappedGroups.url} />
                             </div>
                             <div className='group-name-container'>
-                                <div className='group-name' > Test</div>
-                            </div>
+                                <div className='group-name' >{mappedGroups.name}</div>
+                            </div> */}
                             <i className="fa fa-plus-square"></i>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ CREATE TABLE users (
     username VARCHAR(30),
     password VARCHAR(250),
     profile_pic VARCHAR(300)
+
 );
 
 CREATE TABLE post (
@@ -12,16 +13,17 @@ CREATE TABLE post (
     photo VARCHAR(300),
     date date,
     user_id INT REFERENCES users(user_id),
-    group_id INT REFERENCES group(group_id)
+    group_id INT REFERENCES groups(group_id)
 );
 
 CREATE TABLE groups (
     group_id SERIAL PRIMARY KEY,
     name VARCHAR(30),
-    group_pic VARCHAR(300)
+    group_pic VARCHAR(300),
+    creator_id INT REFERENCES users(user_id)
 );
 
-CREATE TABLE user_group (
+CREATE TABLE users_groups (
     user_id INT REFERENCES users(user_id),
-    group_id INT REFERENCES group(group_id)
+    group_id INT REFERENCES groups(group_id)
 )

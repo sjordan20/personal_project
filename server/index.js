@@ -7,6 +7,7 @@ const session = require('express-session')
 const checkUser = require('./middleware/checkUser')
 const authCtrl = require('./controllers/authController')
 const groupCtrl = require('./controllers/groupController')
+const s3Ctrl = require('./controllers/s3Controller')
 
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
@@ -42,4 +43,11 @@ app.post('/api/login', authCtrl.login)
 app.post(`/api/logout`, authCtrl.logout)
 app.get('/api/check', checkUser)
 
-app.get('/api/signs3', groupCtrl.groupPhoto)
+// S3 upload
+app.get('/api/signs3', s3Ctrl.upload)
+
+// group endpoints 
+
+app.get('/api/group', groupCtrl.getGroups)
+// user_id
+app.post('/api/group/:id', groupCtrl.createGroup)
