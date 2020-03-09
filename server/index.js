@@ -47,9 +47,11 @@ app.get('/api/check', checkUser)
 app.get('/api/signs3', s3Ctrl.upload)
 
 // group endpoints 
-
+// user_id
+app.get('/api/group/:id', groupCtrl.getUserGroup)
 app.get('/api/group', groupCtrl.getGroups)
 // user_id
 app.post('/api/group/:id', groupCtrl.createGroup)
 // group_id
 app.post('/api/users_groups/:group_id', groupCtrl.addMember)
+

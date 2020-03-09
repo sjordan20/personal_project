@@ -3,6 +3,22 @@
 module.exports = {
 
 
+    getUserGroup: async (req, res) => {
+        const db = req.app.get('db')
+        console.log(req.params)
+        const { id } = req.params
+        // id is user_id
+
+        const groups = db.get_user_group([id])
+            .then(group => res.status(200).send(group))
+            .catch(err => {
+
+                res.status(200).send(groups)
+            })
+
+
+
+    },
 
     getGroups: (req, res) => {
         const db = req.app.get('db')
@@ -15,6 +31,7 @@ module.exports = {
 
 
     },
+
 
     createGroup: (req, res) => {
 

@@ -1,5 +1,5 @@
 const initialState = {
-    group: {}
+    group: []
 }
 
 const GET_GROUP = "GET_GROUP"
