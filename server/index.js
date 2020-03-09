@@ -51,3 +51,5 @@ app.get('/api/signs3', s3Ctrl.upload)
 app.get('/api/group', groupCtrl.getGroups)
 // user_id
 app.post('/api/group/:id', groupCtrl.createGroup)
+// group_id
+app.post('/api/users_groups/:group_id', groupCtrl.addMember)

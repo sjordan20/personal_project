@@ -64,9 +64,7 @@ class CreatePost extends Component {
         if (!this.props.authReducer.user.username) return <Redirect to='/' />
         return (
             <div className="post-create-body">
-                <h1 className="title-text">
-                    Log Your Memories
-                </h1>
+
                 <div className="create-container">
                     <textarea
                         className='text'
@@ -111,7 +109,8 @@ class CreatePost extends Component {
 
 const mapStateToProps = reduxState => {
     return {
-        authReducer: reduxState.authReducer
+        authReducer: reduxState.authReducer,
+        groupReducer: reduxState.groupReducer
     }
 }
 

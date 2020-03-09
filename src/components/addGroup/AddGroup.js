@@ -68,7 +68,7 @@ class AddGroup extends Component {
         axios.get('/api/group')
             .then(res => {
                 this.setState({ groups: res.data })
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -87,18 +87,37 @@ class AddGroup extends Component {
     }
 
 
+    addMember = (group_id) => {
+        console.log(group_id
+            , this.props.authReducer.user.user_id)
+        axios.post(`/api/users_groups/${group_id}`,
+            { user_id: this.props.authReducer.user.user_id }
+        )
+            .then(() => {
+                this.props.history.push('/dashboard')
+            }
+            ).catch(err => console.log(err))
+    }
+
+    handleAddMember = (id) => {
+        this.addMember(id)
+    }
 
     render() {
         if (!this.props.authReducer.user.username) return <Redirect to='/' />
         const { url, isUploading } = this.state;
 
-
         const mappedGroups = this.state.groups.map((element, index) => {
+            console.log(element)
             return (
                 <div>
+
                     <img src={element.group_pic} />
                     {element.name}
-                    {this.key = index}
+                    {/* {this.key = index} */}
+                    <i
+                        onClick={() => this.handleAddMember(element.group_id)}
+                        className="fa fa-plus-square"></i>
                 </div>
             )
         })
@@ -159,7 +178,7 @@ class AddGroup extends Component {
                             <div className='group-name-container'>
                                 <div className='group-name' >{mappedGroups.name}</div>
                             </div> */}
-                            <i className="fa fa-plus-square"></i>
+
                         </div>
                     </div>
 
