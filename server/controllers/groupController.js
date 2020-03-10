@@ -5,7 +5,7 @@ module.exports = {
 
     getUserGroup: async (req, res) => {
         const db = req.app.get('db')
-        console.log(req.params)
+        // console.log(req.params)
         const { id } = req.params
         // id is user_id
 

@@ -59,5 +59,7 @@ app.post('/api/users_groups/:group_id', groupCtrl.addMember)
 
 // Post endpoints
 
-// group_id
+
 app.post('/api/post/:user_id', postCtrl.createPost)
+// group_id
+app.get('/api/post/:id', postCtrl.getPosts)
