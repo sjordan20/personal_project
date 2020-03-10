@@ -2,10 +2,12 @@ module.exports = {
 
     createPost: (req, res) => {
         const db = req.app.get('db')
-        const { group_id } = req.params
-        const { user_id, content, photo, date } = req.body
+        const { user_id } = req.params
+        const { group_id, content, photo } = req.body
+        console.log(req.params)
+        console.log(req.body)
 
-        db.create_post([group_id, user_id, content, photo, date])
+        db.create_post([user_id, group_id, content, photo, new Date()])
             .then(() => {
                 res.sendStatus(201)
             })

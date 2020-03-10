@@ -16,7 +16,8 @@ class CreatePost extends Component {
         super(props)
         this.state = {
             isUploading: false,
-            url: ''
+            url: '',
+            usersGroups: []
         }
     }
     getSignedRequest = ([file]) => {
@@ -56,11 +57,36 @@ class CreatePost extends Component {
             })
     }
 
+    componentDidMount() {
+        this.getUsersGroups()
+
+    }
+
+    getUsersGroups = () => {
+
+        axios.get(`/api/group/${this.props.authReducer.user.user_id}`)
+            .then(res => {
+                this.setState({ usersGroups: res.data })
+            })
+    }
+
+
 
 
 
     render() {
 
+        const mappedUsersGroups = this.state.usersGroups.map((element, index) => {
+            return (
+
+                <option value={element.user_id}>{element.name}</option>
+
+
+            )
+
+        })
+
+        console.log(this.state.usersGroups)
         if (!this.props.authReducer.user.username) return <Redirect to='/' />
         return (
             <div className="post-create-body">
@@ -93,6 +119,12 @@ class CreatePost extends Component {
                         >
                             {this.isUploading ? <GridLoader /> : <p className='drop-text'>Upload Picture</p>}
                         </Dropzone>
+                        <label for='test'>test</label>
+                        <select
+
+                            id='test'>
+                            {mappedUsersGroups}
+                        </select>
                     </div>
                     <div className='button-container-cp'>
                         <button className='submit'>

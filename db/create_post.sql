@@ -1,6 +1,6 @@
-INSERT INTO (
-    group_id,
+INSERT INTO post (
     user_id,
+    group_id,
     content,
     photo,
     date

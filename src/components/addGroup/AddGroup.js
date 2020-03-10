@@ -108,7 +108,7 @@ class AddGroup extends Component {
         const { url, isUploading } = this.state;
 
         const mappedGroups = this.state.groups.map((element, index) => {
-            console.log(element)
+
             return (
                 <div>
 
@@ -121,7 +121,6 @@ class AddGroup extends Component {
                 </div>
             )
         })
-        console.log(mappedGroups)
 
         return (
             <div >

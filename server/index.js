@@ -7,6 +7,7 @@ const session = require('express-session')
 const checkUser = require('./middleware/checkUser')
 const authCtrl = require('./controllers/authController')
 const groupCtrl = require('./controllers/groupController')
+const postCtrl = require('./controllers/postController')
 const s3Ctrl = require('./controllers/s3Controller')
 
 
@@ -55,3 +56,8 @@ app.post('/api/group/:id', groupCtrl.createGroup)
 // group_id
 app.post('/api/users_groups/:group_id', groupCtrl.addMember)
 
+
+// Post endpoints
+
+// group_id
+app.post('/api/post/:user_id', postCtrl.createPost)
