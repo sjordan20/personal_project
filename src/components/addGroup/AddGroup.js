@@ -100,7 +100,9 @@ class AddGroup extends Component {
     }
 
     handleAddMember = (id) => {
-        this.addMember(id)
+        console.log(id)
+        this.props.addMember(id)
+
     }
 
     render() {
@@ -194,4 +196,4 @@ const mapStateToProps = reduxState => {
 }
 
 
-export default connect(mapStateToProps)(AddGroup);
+export default connect(mapStateToProps, { AddGroup })(AddGroup);

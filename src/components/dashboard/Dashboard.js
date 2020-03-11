@@ -8,18 +8,21 @@ import axios from 'axios'
 function Dashboard(props) {
 
     const [posts, setPosts] = useState([])
-    props.getGroup()
 
     useEffect(() => {
-        axios.get(`/api/post${props.groupReducer.groups.group_id}`)
-            .then(res => {
-                setPosts(res.data)
-            })
+        props.getGroup(props.authReducer.user.user_id)
+        props.groupReducer.groups.forEach(element => {
+            axios.get(`/api/post/${element.group_id}`)
+                .then(res => {
+                    setPosts([...posts, ...res.data])
+                })
+        })
     }, [])
 
 
+
     if (!props.authReducer.user.username) return <Redirect to='/' />
-    console.log(props.groupReducer.groups.group_id)
+    // console.log(props.groupReducer.groups[0].group_id)
     return (
         < div >
             {
@@ -27,6 +30,7 @@ function Dashboard(props) {
 
                     return <div>
                         <img src={post.photo} />
+                        {post.username}
                         {post.content}
 
                         <div>{post.date}</div>
@@ -34,7 +38,7 @@ function Dashboard(props) {
                 })
             }
             < div className='body' >
-                {posts}
+
             </div >
         </div >
     );
