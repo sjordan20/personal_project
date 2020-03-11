@@ -32,6 +32,11 @@ function Nav(props) {
                             <i className="fa fa-search"></i>
                         </Link>
                     </div>
+                    <div className='button-container'>
+                        <Link to='/userProfile'>
+                            <i className="fa fa-user"></i>
+                        </Link>
+                    </div>
                 </div>
             ) : (
                     <div></div>

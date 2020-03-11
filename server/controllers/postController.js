@@ -15,11 +15,12 @@ module.exports = {
                 res.sendStatus(500)
             })
     },
-    getPosts: async (req, res) => {
+    getPostsGroup: async (req, res) => {
         const { id } = req.params
         const db = req.app.get('db')
 
-        const posts = await db.get_posts(id)
+        // id is group_id
+        const posts = await db.get_posts_by_group(id)
         if (posts[0]) {
             posts.forEach((element, index) => {
                 posts[index].date = element.date.toDateString()
@@ -30,5 +31,76 @@ module.exports = {
         }
     },
 
+    getPostsUser: async (req, res) => {
+        const { id } = req.params
+        const db = req.app.get('db')
+        // id is user_id
+        const posts = await db.get_posts_by_user(id)
+        if (posts[0]) {
+            posts.forEach((element, index) => {
+                posts[index].date = element.date.toDateString()
+            })
+            res.status(200).send(posts)
+        } else {
+            res.sendStatus(500)
+        }
+    },
+
+    searchDate: async (req, res) => {
+        const db = req.app.get('db')
+        const { date } = req.query
+        const { id } = req.params
+
+        // id is group_id
+        let posts = []
+        if (id) {
+            posts = await db.search_date([`${date}`, id])
+            res.status(200).send(posts)
+        } else {
+            res.sendStatus(500)
+        }
+    },
+
+    searchContent: async (req, res) => {
+        const db = req.app.get('db')
+        const { content } = req.query
+        const { id } = req.params
+
+        // id is group_id
+        let posts = []
+        if (id) {
+            posts = await db.search_content([`${content}`, id])
+            res.status(200).send(posts)
+        } else {
+            res.sendStatus(500)
+        }
+    },
+
+    editPost: (req, res) => {
+        const db = req.app.get('db')
+        const { post_id, user_id } = req.params
+        const { content } = req.body
+
+        db.edit_post([content, post_id, user_id])
+            .then(() => {
+                res.sendStatus(200)
+            })
+            .catch(() => {
+                res.sendStatus(500)
+            })
+    },
+
+    deletePost: (req, res) => {
+        const db = req.app.get('db')
+        const { post_id, user_id } = req.params
+
+        db.delete_post([post_id, user_id])
+            .then(() => {
+                res.sendStatus(200)
+            })
+            .catch(() => {
+                res.sendStatus(500)
+            })
+    }
 
 }

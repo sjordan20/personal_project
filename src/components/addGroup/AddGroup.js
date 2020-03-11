@@ -101,7 +101,7 @@ class AddGroup extends Component {
 
     handleAddMember = (id) => {
         console.log(id)
-        this.props.addMember(id)
+        this.addMember(id)
 
     }
 

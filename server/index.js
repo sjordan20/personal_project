@@ -62,4 +62,12 @@ app.post('/api/users_groups/:group_id', groupCtrl.addMember)
 
 app.post('/api/post/:user_id', postCtrl.createPost)
 // group_id
-app.get('/api/post/:id', postCtrl.getPosts)
+app.get('/api/post/:id', postCtrl.getPostsGroup)
+// user_id
+app.get('/api/postUser/:id', postCtrl.getPostsUser)
+// group_id
+app.get('/api/postDate/:id', postCtrl.searchDate)
+// group_id
+app.get('/api/postContent/:id', postCtrl.searchContent)
+app.put('/api/post/:post_id/:user_id', postCtrl.editPost)
+app.delete('/api/post/:post_id/:user_id', postCtrl.deletePost)
