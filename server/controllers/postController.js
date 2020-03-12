@@ -78,10 +78,11 @@ module.exports = {
 
     editPost: (req, res) => {
         const db = req.app.get('db')
-        const { post_id, user_id } = req.params
+        const { id } = req.params
         const { content } = req.body
 
-        db.edit_post([content, post_id, user_id])
+        console.log(req.params, req.body)
+        db.edit_post([content, id])
             .then(() => {
                 res.sendStatus(200)
             })
@@ -92,9 +93,9 @@ module.exports = {
 
     deletePost: (req, res) => {
         const db = req.app.get('db')
-        const { post_id, user_id } = req.params
+        const { id } = req.params
 
-        db.delete_post([post_id, user_id])
+        db.delete_post([id])
             .then(() => {
                 res.sendStatus(200)
             })

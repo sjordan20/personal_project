@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import axios from 'axios'
+import PostDisplay from '../postDisplay/PostDisplay'
 
 class UserProfile extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isEditing: false,
-            editContent: '',
             userPosts: []
         }
     }
@@ -25,31 +24,38 @@ class UserProfile extends Component {
             .catch(err => console.log(err))
 
     }
-    deletePost = (post_id, group_id) => {
-        this.props.userPosts.forEach(element => {
-            axios.delete(`/api/post/${element.post_id}/${this.props.authReducer.user.user_id}`)
-                .then(res => {
-                    this.getUserPosts()
-                })
+    deletePost = (post_id) => {
 
-        });
+        axios.delete(`/api/post/${post_id}`)
+            .then(res => {
+                this.getUserPosts()
+            })
+            .catch(err => console.log(err))
     }
-    handleDelete = () => {
-        this.deletePost()
+
+    editPost = (post_id, content) => {
+        axios.put(`/api/post/${post_id}`, { content })
+            .then(() => {
+                this.getUserPosts()
+            })
+            .catch(err => console.log(err))
     }
 
     render() {
-
-        console.log(this.userPosts)
         const mappedUsersPosts = this.state.userPosts.map((element, index) => {
+            // console.log(element.content)
             return (
-                <div>
-                    {element.content}
-                    <button
-                        onClick={this.handleDelete}
-                    >Delete</button>
-                </div>
+
+                <PostDisplay
+                    content={element.content}
+                    toggleEdit={this.toggleEdit}
+                    deletePost={this.deletePost}
+                    editPost={this.editPost}
+                    id={element.post_id}
+                    key={index}
+                />
             )
+
         })
 
         return (

@@ -69,5 +69,7 @@ app.get('/api/postUser/:id', postCtrl.getPostsUser)
 app.get('/api/postDate/:id', postCtrl.searchDate)
 // group_id
 app.get('/api/postContent/:id', postCtrl.searchContent)
-app.put('/api/post/:post_id/:user_id', postCtrl.editPost)
-app.delete('/api/post/:post_id/:user_id', postCtrl.deletePost)
+// post_id
+app.put('/api/post/:id', postCtrl.editPost)
+// post_id
+app.delete('/api/post/:id', postCtrl.deletePost)
