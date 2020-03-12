@@ -21,7 +21,7 @@ class PostDisplay extends Component {
                 <>
                     {this.state.isEditing ? (
                         <EditPost
-                            post={this.props.element}
+                            content={this.props.content}
                             editPost={this.props.editPost}
                             toggleEdit={this.toggleEdit}
                             id={this.props.id}

@@ -35,7 +35,7 @@ class EditPost extends Component {
                 </button>
                 <button
                     onClick={() => {
-                        this.props.editPost(this.props.id, this.props.content)
+                        this.props.editPost(this.props.id, this.state.content)
                         this.props.toggleEdit()
                     }}
 
