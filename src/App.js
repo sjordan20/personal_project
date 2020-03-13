@@ -4,7 +4,7 @@ import routes from "./routes";
 import Header from './components/header/Header'
 import Nav from './components/nav/Nav'
 
-import "./app.css";
+import "./app.scss";
 
 function App(props) {
   return (

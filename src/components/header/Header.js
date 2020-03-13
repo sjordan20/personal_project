@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { logout, register, login } from "../../ducks/authReducer";
-import './header.css'
+import './header.scss'
 
 function Header(props) {
 

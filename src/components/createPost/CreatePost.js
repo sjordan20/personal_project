@@ -16,7 +16,7 @@ class CreatePost extends Component {
             url: "",
             usersGroups: [],
             content: "",
-            selectGroup: 0
+            selectGroup: 1
         };
     }
     getSignedRequest = ([file]) => {
@@ -96,8 +96,9 @@ class CreatePost extends Component {
     };
 
     render() {
+        console.log(this.state.selectGroup)
         const mappedUsersGroups = this.state.usersGroups.map((element, index) => {
-            return <option value={element.user_id}>{element.name}</option>;
+            return <option key={index} value={element.group_id}>{element.name}</option>;
         });
 
         if (!this.props.authReducer.user.username) return <Redirect to="/" />;

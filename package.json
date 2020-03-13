@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"main": "server/index",
-	"proxy": "http://localhost:4224 ",
+	"proxy": "http://localhost:5050 ",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.4.1",
@@ -15,6 +15,7 @@
 		"express": "^4.17.1",
 		"express-session": "^1.17.0",
 		"massive": "^6.2.0",
+		"node-sass": "^4.13.1",
 		"react": "^16.13.0",
 		"react-dom": "^16.13.0",
 		"react-dropzone": "^4.2.13",

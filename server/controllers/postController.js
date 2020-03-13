@@ -1,20 +1,21 @@
 module.exports = {
-
     createPost: (req, res) => {
         const db = req.app.get('db')
         const { user_id } = req.params
         const { group_id, content, photo } = req.body
-        // console.log(req.params)
-        // console.log(req.body)
+        console.log(req.params)
+        console.log(req.body)
 
         db.create_post([user_id, group_id, content, photo, new Date()])
             .then(() => {
                 res.sendStatus(201)
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err)
                 res.sendStatus(500)
             })
     },
+
     getPostsGroup: async (req, res) => {
         const { id } = req.params
         const db = req.app.get('db')
@@ -50,6 +51,7 @@ module.exports = {
         const db = req.app.get('db')
         const { date } = req.query
         const { id } = req.params
+console.log(req.query.date)
 
         // id is group_id
         let posts = []

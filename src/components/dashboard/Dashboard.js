@@ -26,9 +26,11 @@ function Dashboard(props) {
     return (
         < div >
             {
-                posts.map(post => {
+                posts.map((post, index) => {
 
-                    return <div>
+                    return <div
+                    key={index}
+                    >
                         <img src={post.photo} />
                         {post.username}
                         {post.content}

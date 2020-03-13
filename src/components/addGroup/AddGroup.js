@@ -112,7 +112,9 @@ class AddGroup extends Component {
         const mappedGroups = this.state.groups.map((element, index) => {
 
             return (
-                <div>
+                <div
+                key={index}
+                >
 
                     <img src={element.group_pic} />
                     {element.name}
