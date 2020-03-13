@@ -51,7 +51,6 @@ module.exports = {
         const db = req.app.get('db')
         const { date } = req.query
         const { id } = req.params
-console.log(req.query.date)
 
         // id is group_id
         let posts = []
@@ -71,7 +70,7 @@ console.log(req.query.date)
         // id is group_id
         let posts = []
         if (id) {
-            posts = await db.search_content([`${content}`, id])
+            posts = await db.search_content([id])
             res.status(200).send(posts)
         } else {
             res.sendStatus(500)

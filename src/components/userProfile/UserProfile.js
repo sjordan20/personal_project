@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import PostDisplay from '../postDisplay/PostDisplay'
 
@@ -42,6 +43,7 @@ class UserProfile extends Component {
     }
 
     render() {
+        if (!this.props.authReducer.user.username) return <Redirect to="/" />;
         const mappedUsersPosts = this.state.userPosts.map((element, index) => {
             // console.log(element.content)
             return (

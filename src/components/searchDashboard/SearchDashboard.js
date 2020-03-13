@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 class SearchDashboard extends Component {
@@ -9,7 +10,9 @@ class SearchDashboard extends Component {
             usersGroups: [],
             selectGroup: 1,
             selectDate: 0,
-            datePosts: []
+            selectContent: '',
+            datePosts: [],
+            contentPosts: []
         }
     }
 
@@ -39,27 +42,59 @@ class SearchDashboard extends Component {
     searchDate = () => {
         axios.get(`/api/postDate/${this.state.selectGroup}?date=${this.state.selectDate}`)
             .then((res) => {
-            console.log("here",res.data)
                 this.setState({ datePosts: res.data })
             })
+    }
 
+    searchContent = () => {
+
+        axios.get(`/api/postContent/${this.state.selectGroup}`)
+            .then((res) => {
+                this.setState({ contentPosts: res.data })
+            })
+    }
+
+    handleSelectContent = (event) => {
+        this.setState({
+            selectContent: event.target.value, contentPosts: []
+        })
 
     }
 
+    resetSearch = () => {
+        this.setState({
+            contentPosts: [],
+            datePosts: []
 
-
+        })
+    }
 
 
     render() {
-        const selectDates = this.state.datePosts.map((post)=> {
-            return <h1>{post.content}</h1>
+        console.log(this.state.selectDate, this.state.selectContent)
+        if (!this.props.authReducer.user.username) return <Redirect to="/" />;
+
+        const selectContents = this.state.contentPosts.filter((post, index) => {
+            return post.content.includes(this.state.selectContent)
+        }).map((post, index) => {
+            return <h2
+                key={index}
+            >
+                {post.content}
+            </h2>
+        })
+
+        const selectDates = this.state.datePosts.map((post, index) => {
+            return <h1
+                key={index}
+            >{post.content}</h1>
         })
         const mappedUsersGroups = this.state.usersGroups.map((element, index) => {
             return <option
                 key={index}
                 value={element.user_id}>{element.name}</option>;
         });
-        console.log(this.state.selectDate)
+
         return (
             <div>
 
@@ -79,8 +114,20 @@ class SearchDashboard extends Component {
                 <div>
                     {selectDates}
                 </div>
-
-
+                <div>
+                    <input
+                        onChange={this.handleSelectContent}
+                    />
+                    <button
+                        onClick={this.searchContent}
+                    >Search Post Content</button>
+                    <div>
+                        {selectContents}
+                    </div>
+                </div>
+                <button
+                    onClick={this.resetSearch}
+                >Clear Search</button>
 
             </div>
         );

@@ -112,16 +112,20 @@ class AddGroup extends Component {
         const mappedGroups = this.state.groups.map((element, index) => {
 
             return (
-                <div
-                key={index}
-                >
+                <div className='group-container'>
+                    <div
+                        key={index}
+                    >
 
-                    <img src={element.group_pic} />
-                    {element.name}
-                    {/* {this.key = index} */}
-                    <i
-                        onClick={() => this.handleAddMember(element.group_id)}
-                        className="fa fa-plus-square"></i>
+                        <img src={element.group_pic} />
+                        {element.name}
+                        {/* {this.key = index} */}
+                        <i
+                            onClick={() => this.handleAddMember(element.group_id)}
+                            className="fa fa-plus-square"></i>
+                    </div>
+
+
                 </div>
             )
         })
@@ -173,16 +177,15 @@ class AddGroup extends Component {
 
                     <div className="groups-body">
                         <div className='join-title'>Join a Group</div>
-                        <div className='group-container'>
-                            {mappedGroups}
-                            {/* <div className='group-photo' >
+                        {mappedGroups}
+                        {/* <div className='group-photo' >
                                 <img src={mappedGroups.url} />
                             </div>
                             <div className='group-name-container'>
                                 <div className='group-name' >{mappedGroups.name}</div>
                             </div> */}
 
-                        </div>
+
                     </div>
 
                 </div>

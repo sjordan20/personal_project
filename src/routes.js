@@ -2,7 +2,6 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Dashboard from './components/dashboard/Dashboard'
 import SearchDashboard from './components/searchDashboard/SearchDashboard'
-import SearchedPost from './components/searchedPost/SearchedPost'
 import CreatePost from './components/createPost/CreatePost'
 import UserProfile from './components/userProfile/UserProfile'
 import Landing from './components/landing/Landing'
@@ -15,7 +14,6 @@ export default (
         <Route path="/dashboard" component={Dashboard} />
         <Route path='/addGroup' component={AddGroup} />
         <Route path="/searchDashboard" component={SearchDashboard} />
-        <Route path="/searchedPost" component={SearchedPost} />
         <Route path="/createPost" component={CreatePost} />
         <Route path="/userProfile" component={UserProfile} />
     </Switch>
