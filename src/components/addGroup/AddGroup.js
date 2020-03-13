@@ -107,25 +107,22 @@ class AddGroup extends Component {
 
     render() {
         if (!this.props.authReducer.user.username) return <Redirect to='/' />
-        const { url, isUploading } = this.state;
+        const { isUploading } = this.state;
 
         const mappedGroups = this.state.groups.map((element, index) => {
 
             return (
-                <div className='group-container'>
-                    <div
-                        key={index}
-                    >
+                <div key={index} className='group-container'>
 
-                        <img src={element.group_pic} />
-                        {element.name}
-                        {/* {this.key = index} */}
-                        <i
-                            onClick={() => this.handleAddMember(element.group_id)}
-                            className="fa fa-plus-square"></i>
+                    <img className='group-photo' src={element.group_pic} />
+                    <div className='group-name-container'>
+                        <p className='group-name'>
+                            {element.name}
+                        </p>
                     </div>
-
-
+                    <i
+                        onClick={() => this.handleAddMember(element.group_id)}
+                        className="fa fa-plus-square"></i>
                 </div>
             )
         })
@@ -178,17 +175,11 @@ class AddGroup extends Component {
                     <div className="groups-body">
                         <div className='join-title'>Join a Group</div>
                         {mappedGroups}
-                        {/* <div className='group-photo' >
-                                <img src={mappedGroups.url} />
-                            </div>
-                            <div className='group-name-container'>
-                                <div className='group-name' >{mappedGroups.name}</div>
-                            </div> */}
-
 
                     </div>
 
                 </div>
+                <div className='bumper'></div>
             </div >
         );
     }

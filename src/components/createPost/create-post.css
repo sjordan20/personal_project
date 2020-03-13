@@ -1,6 +1,6 @@
 .post-create-body {
   width: 100%;
-  height: 100vh;
+  height: 81vh;
   background-color: #efe9f4;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -19,7 +19,7 @@
 
 .create-container {
   width: 90%;
-  height: 60%;
+  height: 80%;
   background-color: #efe9f4;
   border-radius: 5%;
   -webkit-box-shadow: 1px 1px 1px #171d1c;
@@ -47,9 +47,11 @@
   color: #171d1c;
 }
 
-.text {
+.post-text {
   position: absolute;
   top: 5%;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1rem;
 }
 
 .drop-text {
@@ -76,5 +78,26 @@
   font-weight: 600;
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 1.6rem;
+}
+
+.drop-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 40px;
+}
+
+.label-group {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=create-post.css.map */

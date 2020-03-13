@@ -23,3 +23,7 @@ $info-font: "Pathway Gothic One", sans-serif;
 	color: $c;
 	font-size: $s;
 }
+
+@mixin shadow($b: 1px 1px 1px $dark) {
+	box-shadow: $b;
+}

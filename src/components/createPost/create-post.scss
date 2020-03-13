@@ -2,7 +2,7 @@
 
 .post-create-body {
 	width: 100%;
-	height: 100vh;
+	height: 81vh;
 	background-color: $light;
 	@include flex-column;
 	position: relative;
@@ -10,10 +10,10 @@
 
 .create-container {
 	width: 90%;
-	height: 60%;
+	height: 80%;
 	background-color: $light;
 	border-radius: 5%;
-	box-shadow: 1px 1px 1px $dark;
+	@include shadow;
 	position: absolute;
 	top: 5%;
 	@include flex-column;
@@ -26,9 +26,11 @@
 	color: $dark;
 }
 
-.text {
+.post-text {
 	position: absolute;
 	top: 5%;
+	font-family: $info-font;
+	font-size: 1rem;
 }
 .drop-text {
 	color: $dark;
@@ -49,4 +51,14 @@
 	font-weight: 600;
 	font-family: $info-font;
 	font-size: 1.6rem;
+}
+
+.drop-container {
+	@include flex-column;
+	margin-left: 40px;
+}
+
+.label-group {
+	font-family: $info-font;
+	font-size: 0.9rem;
 }

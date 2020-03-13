@@ -108,8 +108,8 @@ class CreatePost extends Component {
                     <textarea
                         value={this.state.name}
                         onChange={this.handleContentChange}
-                        className="text"
-                        rows="15"
+                        className="post-text"
+                        rows="20"
                         cols="40"
                         placeholder="Dear Diary...."
                     />
@@ -131,17 +131,17 @@ class CreatePost extends Component {
                             accept="image/*"
                             multiple={false}
                         >
-                            {this.isUploading ? (
-                                <GridLoader />
-                            ) : (
-                                    <p className="drop-text">Upload Picture</p>
-                                )}
+                            {this.isUploading ? <GridLoader /> : <p className="drop-text">Upload Picture</p>}
                         </Dropzone>
-                        <label htmlFor="test">test</label>
-                        <select id="test"
-                            value={this.state.value}
-                            onChange={this.handleSelectGroup}
-                        >{mappedUsersGroups}</select>
+
+                        <div className="drop-container">
+                            <label className="label-group" htmlFor="test">Select Group to Post In</label>
+                            <select id="test"
+                                value={this.state.value}
+                                onChange={this.handleSelectGroup}
+                            >{mappedUsersGroups}</select>
+
+                        </div>
                     </div>
                     <div className="button-container-cp">
                         <button
