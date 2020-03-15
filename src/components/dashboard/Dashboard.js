@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 import { getGroup } from '../../ducks/groupReducer'
 import axios from 'axios'
 
+import './dashboard.css'
 
 function Dashboard(props) {
 
@@ -24,24 +25,36 @@ function Dashboard(props) {
     if (!props.authReducer.user.username) return <Redirect to='/' />
     // console.log(props.groupReducer.groups[0].group_id)
     return (
-        < div >
+        < div className='body'>
+
             {
                 posts.map((post, index) => {
 
                     return <div
-                    key={index}
+                        key={index}
+                        className='post'
                     >
-                        <img src={post.photo} />
-                        {post.username}
-                        {post.content}
+                        <div className='date-name'>
+                            <div className='username'>
+                                {post.username}
+                            </div>
+                            <div
+                                className='post-date'
+                            >{post.date}</div>
+                        </div>
+                        <img className="post-photo" src={post.photo} />
+                        <div className="post-content">
 
-                        <div>{post.date}</div>
+                            {post.content}
+                        </div>
+
+
                     </div>
                 })
             }
-            < div className='body' >
+            <div className="bumper">
 
-            </div >
+            </div>
         </div >
     );
 }

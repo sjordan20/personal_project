@@ -104,6 +104,8 @@ class CreatePost extends Component {
         if (!this.props.authReducer.user.username) return <Redirect to="/" />;
         return (
             <div className="post-create-body">
+                <div className='top-bumper'></div>
+
                 <div className="create-container">
                     <textarea
                         value={this.state.name}

@@ -1,6 +1,76 @@
 .body {
-  background: #574b60;
-  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #574b60), color-stop(88%, #498196), to(#c0c5c1));
-  background: linear-gradient(90deg, #574b60 8%, #498196 88%, #c0c5c1 100%);
+  width: 100%;
+  height: 100vh;
+  background-color: #498196;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.top-bumper {
+  width: 100%;
+  height: 100px;
+}
+
+.post {
+  width: 300px;
+  height: 500px;
+  background-color: #efe9f4;
+  border-radius: 5%;
+  -webkit-box-shadow: 1px 1px 1px #171d1c;
+          box-shadow: 1px 1px 1px #171d1c;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.post-photo {
+  height: 260px;
+  width: 280px;
+  border-radius: 5%;
+}
+
+.date-name {
+  width: 100%;
+}
+
+.username {
+  font-family: "Pathway Gothic One", sans-serif;
+  color: #574b60;
+  font-weight: 600;
+  margin-bottom: 2%;
+  font-size: 1.3rem;
+}
+
+.post-date {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: underline;
+}
+
+.post-content {
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 1.1rem;
+  color: #171d1c;
 }
 /*# sourceMappingURL=dashboard.css.map */

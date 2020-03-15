@@ -17,6 +17,11 @@
   position: relative;
 }
 
+.top-bumper {
+  width: 100%;
+  height: 100px;
+}
+
 .create-container {
   width: 90%;
   height: 80%;
