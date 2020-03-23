@@ -2,9 +2,14 @@ import React from 'react';
 
 function UserPost(props) {
     return (
-        <div>
+        <div className='body'>
 
-            {props.content}
+            <img className="post-photo" src={props.photo} />
+            <div className="post-content">
+
+                {props.content}
+            </div>
+
             <button
                 onClick={props.toggleEdit}
             >edit</button>
@@ -15,6 +20,8 @@ function UserPost(props) {
             >
                 delete
             </button>
+
+            <div className='bumper'></div>
 
         </div >
     );

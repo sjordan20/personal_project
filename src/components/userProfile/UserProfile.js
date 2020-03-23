@@ -45,11 +45,11 @@ class UserProfile extends Component {
     render() {
         if (!this.props.authReducer.user.username) return <Redirect to="/" />;
         const mappedUsersPosts = this.state.userPosts.map((element, index) => {
-            // console.log(element.content)
             return (
 
                 <PostDisplay
                     content={element.content}
+                    photo={element.photo}
                     toggleEdit={this.toggleEdit}
                     deletePost={this.deletePost}
                     editPost={this.editPost}

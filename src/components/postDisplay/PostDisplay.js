@@ -29,9 +29,11 @@ class PostDisplay extends Component {
                     ) : (
                             <UserPost
                                 content={this.props.content}
+                                photo={this.props.photo}
                                 toggleEdit={this.toggleEdit}
                                 id={this.props.id}
                                 deletePost={this.props.deletePost}
+
                             />
                         )}
                 </>

@@ -1,7 +1,4 @@
 .body {
-  width: 100%;
-  height: 100vh;
-  background-color: #498196;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,11 +11,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.top-bumper {
-  width: 100%;
-  height: 100px;
+  background-color: #efe9f4;
 }
 
 .post {

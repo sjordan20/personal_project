@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
+import './searchDashboard.css'
+
 class SearchDashboard extends Component {
     constructor(props) {
         super(props);
@@ -79,15 +81,37 @@ class SearchDashboard extends Component {
         }).map((post, index) => {
             return <h2
                 key={index}
+                className='post'
             >
-                {post.content}
+                <div className='date-name'>
+                    <div className='username'>
+                        {post.username}
+                    </div>
+                </div>
+                <img className="post-photo" src={post.photo} />
+                <div className="post-content">
+
+                    {post.content}
+                </div>
             </h2>
         })
 
         const selectDates = this.state.datePosts.map((post, index) => {
             return <h1
                 key={index}
-            >{post.content}</h1>
+                className='post'
+            >
+                <div className='date-name'>
+                    <div className='username'>
+                        {post.username}
+                    </div>
+                </div>
+                <img className="post-photo" src={post.photo} />
+                <div className="post-content">
+
+                    {post.content}
+                </div>
+            </h1>
         })
         const mappedUsersGroups = this.state.usersGroups.map((element, index) => {
             return <option
@@ -96,38 +120,61 @@ class SearchDashboard extends Component {
         });
 
         return (
-            <div>
+            <div className='body'>
+                <div className="border-line"></div>
+                <div className='search-container'>
+                    <div className='group-selector'>
+                        <div>Select Group</div>
+                        <select
+                            value={this.state.value}
+                            onChange={this.handleSelectGroup}
+                        >{mappedUsersGroups}</select>
+                    </div>
 
-                <select
-                    value={this.state.value}
-                    onChange={this.handleSelectGroup}
-                >{mappedUsersGroups}</select>
-                <input
-                    type='date'
-                    onChange={this.handleSelectDate}
+                    <div className='date-search'>
+                        <input
+                            type='date'
+                            onChange={this.handleSelectDate}
 
-                />
-                <button
-                    onClick={this.searchDate}
-                >Search Date</button>
+                        />
+                        <div className='date-button-container'>
+                            <button
+                                className='date-button'
+                                onClick={this.searchDate}
+                            >Search Date</button>
+                        </div>
+                    </div>
+                    <div className='content-search'>
+                        <input
+                            onChange={this.handleSelectContent}
+                        />
+
+                        <div className='content-button-container'>
+                            <button className='content-button'
+                                onClick={this.searchContent}
+                            >Search Content</button>
+                        </div>
+
+                    </div>
+
+                    <div className='clear-button'>
+                        <button
+                            onClick={this.resetSearch}
+                        >Clear Search</button>
+                    </div>
+
+                </div>
 
                 <div>
                     {selectDates}
                 </div>
                 <div>
-                    <input
-                        onChange={this.handleSelectContent}
-                    />
-                    <button
-                        onClick={this.searchContent}
-                    >Search Post Content</button>
-                    <div>
-                        {selectContents}
-                    </div>
+                    {selectContents}
                 </div>
-                <button
-                    onClick={this.resetSearch}
-                >Clear Search</button>
+
+                <div className='bumper'>
+
+                </div>
 
             </div>
         );
