@@ -1,0 +1,28 @@
+@import "../../sass/vars";
+
+.cancel-save-container {
+	@include flex-row;
+	width: 100%;
+}
+
+.cancel-button-container {
+	width: 80px;
+	height: 20px;
+	background-color: $secondary;
+	border-radius: 50px;
+}
+
+.save-button-container {
+	width: 80px;
+	height: 20px;
+	background-color: $secondary;
+	border-radius: 50px;
+}
+
+.cancel-button {
+	color: $info;
+}
+
+.save-button {
+	color: $info;
+}

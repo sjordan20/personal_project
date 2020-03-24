@@ -1,0 +1,34 @@
+.edit-delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.edit-button-container {
+  width: 50px;
+  height: 20px;
+  background-color: #574b60;
+  border-radius: 50px;
+}
+
+.delete-button-container {
+  width: 50px;
+  height: 20px;
+  background-color: #574b60;
+  border-radius: 50px;
+}
+
+.edit-button {
+  color: #c0c5c1;
+}
+
+.delete-button {
+  color: #c0c5c1;
+}
+/*# sourceMappingURL=userPost.css.map */

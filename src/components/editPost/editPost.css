@@ -1,0 +1,34 @@
+.cancel-save-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.cancel-button-container {
+  width: 80px;
+  height: 20px;
+  background-color: #574b60;
+  border-radius: 50px;
+}
+
+.save-button-container {
+  width: 80px;
+  height: 20px;
+  background-color: #574b60;
+  border-radius: 50px;
+}
+
+.cancel-button {
+  color: #c0c5c1;
+}
+
+.save-button {
+  color: #c0c5c1;
+}
+/*# sourceMappingURL=editPost.css.map */
