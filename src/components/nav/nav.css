@@ -38,4 +38,35 @@
   color: #171d1c;
   font-size: 30px;
 }
+
+@media (min-width: 1279px) {
+  .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+    width: 7%;
+    position: absolute;
+    top: 100px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .fa-plus {
+    padding-bottom: 20px;
+  }
+  .fa-users {
+    padding-bottom: 20px;
+  }
+  .fa-search {
+    padding-bottom: 20px;
+  }
+  .fa-home {
+    padding-bottom: 20px;
+  }
+}
 /*# sourceMappingURL=nav.css.map */

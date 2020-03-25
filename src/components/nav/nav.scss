@@ -28,3 +28,28 @@
 .fa-user {
 	@include button-icon;
 }
+
+@media (min-width: 1279px) {
+	.nav-container {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		width: 7%;
+		position: absolute;
+		top: 100px;
+		justify-content: flex-start;
+	}
+
+	.fa-plus {
+		padding-bottom: 20px;
+	}
+	.fa-users {
+		padding-bottom: 20px;
+	}
+	.fa-search {
+		padding-bottom: 20px;
+	}
+	.fa-home {
+		padding-bottom: 20px;
+	}
+}

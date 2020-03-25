@@ -1,5 +1,9 @@
 @import "../../sass/vars";
 
+.user-post-body {
+	@include flex-column;
+	background-color: $light;
+}
 .edit-delete-container {
 	@include flex-row;
 	width: 100%;
@@ -25,4 +29,32 @@
 
 .delete-button {
 	color: $info;
+}
+
+@media (min-width: 1279px) {
+	.user-post-body {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.delete-button-container {
+		width: 0;
+		height: 0;
+	}
+
+	.delete-button {
+		color: $dark;
+		background-color: $primary;
+		border-radius: 50px;
+	}
+
+	.edit-button-container {
+		width: 0;
+		height: 0;
+	}
+	.edit-button {
+		color: $dark;
+		background-color: $primary;
+		border-radius: 50px;
+	}
 }

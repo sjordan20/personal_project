@@ -3,8 +3,6 @@ module.exports = {
         const db = req.app.get('db')
         const { user_id } = req.params
         const { group_id, content, photo } = req.body
-        console.log(req.params)
-        console.log(req.body)
 
         db.create_post([user_id, group_id, content, photo, new Date()])
             .then(() => {
@@ -82,7 +80,6 @@ module.exports = {
         const { id } = req.params
         const { content } = req.body
 
-        console.log(req.params, req.body)
         db.edit_post([content, id])
             .then(() => {
                 res.sendStatus(200)
@@ -95,6 +92,7 @@ module.exports = {
     deletePost: (req, res) => {
         const db = req.app.get('db')
         const { id } = req.params
+        console.log(req.params)
 
         db.delete_post([id])
             .then(() => {

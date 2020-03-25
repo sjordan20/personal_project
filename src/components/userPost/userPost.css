@@ -1,3 +1,19 @@
+.user-post-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #efe9f4;
+}
+
 .edit-delete-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,5 +46,35 @@
 
 .delete-button {
   color: #c0c5c1;
+}
+
+@media (min-width: 1279px) {
+  .user-post-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .delete-button-container {
+    width: 0;
+    height: 0;
+  }
+  .delete-button {
+    color: #171d1c;
+    background-color: #498196;
+    border-radius: 50px;
+  }
+  .edit-button-container {
+    width: 0;
+    height: 0;
+  }
+  .edit-button {
+    color: #171d1c;
+    background-color: #498196;
+    border-radius: 50px;
+  }
 }
 /*# sourceMappingURL=userPost.css.map */

@@ -1,4 +1,4 @@
-.body {
+.dash-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,5 +65,17 @@
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 1.1rem;
   color: #171d1c;
+}
+
+@media (min-width: 1279px) {
+  .dash-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */

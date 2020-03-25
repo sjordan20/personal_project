@@ -100,4 +100,18 @@
   font-family: "Pathway Gothic One", sans-serif;
   font-size: 0.9rem;
 }
+
+@media (min-width: 1279px) {
+  .create-container {
+    width: 50%;
+    height: 80%;
+  }
+  .submit {
+    border-radius: 50px;
+  }
+  .bumper {
+    height: 0;
+    width: 0;
+  }
+}
 /*# sourceMappingURL=create-post.css.map */

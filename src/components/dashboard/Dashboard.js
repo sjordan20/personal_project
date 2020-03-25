@@ -23,13 +23,12 @@ function Dashboard(props) {
 
 
     if (!props.authReducer.user.username) return <Redirect to='/' />
-    // console.log(props.groupReducer.groups[0].group_id)
     return (
-        < div className='body'>
+
+        < div className='dash-body'>
 
             {
                 posts.map((post, index) => {
-
                     return <div
                         key={index}
                         className='post'

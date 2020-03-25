@@ -68,7 +68,6 @@ class AddGroup extends Component {
         axios.get('/api/group')
             .then(res => {
                 this.setState({ groups: res.data })
-                // console.log(res.data)
             })
             .catch(err => console.log(err))
     }
@@ -88,8 +87,6 @@ class AddGroup extends Component {
 
 
     addMember = (group_id) => {
-        console.log(group_id
-            , this.props.authReducer.user.user_id)
         axios.post(`/api/users_groups/${group_id}`,
             { user_id: this.props.authReducer.user.user_id }
         )
@@ -100,7 +97,6 @@ class AddGroup extends Component {
     }
 
     handleAddMember = (id) => {
-        console.log(id)
         this.addMember(id)
 
     }

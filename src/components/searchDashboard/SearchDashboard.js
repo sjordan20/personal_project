@@ -73,7 +73,6 @@ class SearchDashboard extends Component {
 
 
     render() {
-        console.log(this.state.selectDate, this.state.selectContent)
         if (!this.props.authReducer.user.username) return <Redirect to="/" />;
 
         const selectContents = this.state.contentPosts.filter((post, index) => {

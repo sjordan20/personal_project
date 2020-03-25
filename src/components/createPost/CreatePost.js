@@ -32,7 +32,6 @@ class CreatePost extends Component {
             })
             .then((res) => {
                 const { signedRequest, url } = res.data;
-                console.log(signedRequest, url);
                 this.uploadFile(file, signedRequest, url);
             })
             .catch((err) => {
@@ -96,7 +95,6 @@ class CreatePost extends Component {
     };
 
     render() {
-        console.log(this.state.selectGroup)
         const mappedUsersGroups = this.state.usersGroups.map((element, index) => {
             return <option key={index} value={element.group_id}>{element.name}</option>;
         });

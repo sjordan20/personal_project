@@ -3,7 +3,7 @@ import './userPost.css'
 
 function UserPost(props) {
     return (
-        <div className='body'>
+        <div className='user-post-body'>
             <div className='post'>
                 <img className="post-photo" src={props.photo} />
                 <div className="post-content">

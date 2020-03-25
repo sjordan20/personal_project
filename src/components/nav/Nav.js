@@ -6,7 +6,7 @@ import './nav.css'
 
 function Nav(props) {
     return (
-        <div>
+        <div className='nav-body'>
             {props.authReducer.user.username ? (
                 <div className='nav-container'>
                     <div className='button-container'>

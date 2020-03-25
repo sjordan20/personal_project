@@ -55,7 +55,6 @@ module.exports = {
         // id=Group =id
         const { group_id } = req.params
         const { user_id } = req.body
-        console.log(group_id, user_id)
 
         db.add_group_member([group_id, user_id])
             .then(() => {

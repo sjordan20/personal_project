@@ -19,7 +19,6 @@ class EditPost extends Component {
         this.setState({ content: event.target.value });
     };
     render() {
-        // console.log(this.props.content)
         return (
             <div className="body">
                 <div className="post">
